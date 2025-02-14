@@ -1,0 +1,137 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'property'
+    var id_page = 'id-page-property'
+    var class_page = 'class-page-property'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/property.bundle.js')
+block content
+  section.page-hero.property-hero
+    include ../includes/breadcrumbs.pug
+    .about__title-wrap.container
+      .line 
+      h2.section-title.property-title-1 Комерційна
+      h1.section-title.property-title-2 нерухомість
+      .line-with-circle
+        .line
+        .decor-circle 
+          +svg("points")
+        .line
+  section.about.about-property-anim
+    .about-wrap
+      //- .svg-wrap-pc 
+      p.page-hero-descr.container Тут ми доклали неабияких зусиль щоб вирізнятись з поміж інших. 
+      <svg class="about__anim-svg" width="1921" height="970" viewBox="0 0 1921 970" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <path data-about-img-path fill-rule="evenodd" clip-rule="evenodd" d="M1921 0H0V970H1921V0ZM286 485C286 660.074 588.432 802 961.5 802C1334.57 802 1637 660.074 1637 485C1637 309.926 1334.57 168 961.5 168C588.432 168 286 309.926 286 485Z" fill="#322A32"/>
+      </svg>
+      <svg class="about__anim-svg-mob" width="375" height="635" viewBox="0 0 375 635" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path data-about-img-path-mob fill-rule="evenodd" clip-rule="evenodd" d="M375 0H0V635H375V0ZM187.5 564C280.008 564 355 459.235 355 330C355 200.765 280.008 96 187.5 96C94.9923 96 20 200.765 20 330C20 459.235 94.9923 564 187.5 564Z" fill="#322A32"/>
+      </svg>
+      .about-img-wrap
+        .mask 
+        img(src="./assets/images/Location/filler.jpg" alt="").about-img
+    //- .property-hero__img-descr-wrap.container
+    //-   p.page-hero-descr.container Тут ми доклали неабияких зусиль щоб вирізнятись з поміж інших. 
+    //-   .property-hero__img-wrap
+    //-     .mask
+    //-     .mask-border 
+    //-     img(src="./assets/images/Location/filler.jpg" alt="twins buildings")
+
+  section.property-filler 
+    .property-filler__text-block
+      .about__text-block
+        .about__text-wrap 
+          p TWINS має виняткове фасадне скління панорамних вітрин висотою 6 метрів ексцентричних форм за останніми зразками світової архітектури.
+            span Це надає максимально екстравагантного приваблення як будинкам так і вашому бізнесу.
+            +svg("points")
+          +svg('logo-mini')
+    .property-filler__img-wrap 
+      .mask 
+      picture
+        source(
+          srcset="./assets/images/property-page.jpg" media="(min-width: 1366px)"
+          )
+        img(src="./assets/images/property-page-mob.jpg" alt="twins buildings")
+
+    .property-filler__text-block-2
+      .about__text-block
+        .about__text-wrap 
+          p Це надає максимально екстравагантного приваблення як будинкам так і вашому бізнесу.
+            +svg("points")
+          +svg('logo-mini')
+  section.advantages.property-advantages
+    .advantages-wrapper
+      .advantages-list 
+        .advantage-card.property-advantages__card
+          .decor 
+            +svg('points')
+          .property-advantages__img-wrap
+            .mask
+            img(src="./assets/images/Advantages/1.jpg" alt="advantages")
+          p.property-advantages__descr Великий вибір  фасадних приміщень різної площі
+          .number-wrap
+            +svg('logo-mini')
+        .advantage-card.property-advantages__card
+          .decor 
+            +svg('points')
+          .property-advantages__img-wrap
+            .mask
+            img(src="./assets/images/Advantages/1.jpg" alt="advantages")
+          p.property-advantages__descr ідеальна локація
+          .number-wrap
+            +svg('logo-mini')
+        .advantage-card.property-advantages__card
+          .decor 
+            +svg('points')
+          .property-advantages__img-wrap
+            .mask
+            img(src="./assets/images/Advantages/1.jpg" alt="advantages")
+          p.property-advantages__descr відмінна транспортна розв’язка
+          .number-wrap
+            +svg('logo-mini')
+        .advantage-card.property-advantages__card
+          .decor 
+            +svg('points')
+          .property-advantages__img-wrap
+            .mask
+            img(src="./assets/images/Advantages/1.jpg" alt="advantages")
+          p.property-advantages__descr розвинена інфраструктура
+          .number-wrap
+            +svg('logo-mini')
+        .advantage-card.property-advantages__card
+          .decor 
+            +svg('points')
+          .property-advantages__img-wrap
+            .mask
+            img(src="./assets/images/Advantages/1.jpg" alt="advantages")
+          p.property-advantages__descr великий потік цільового трафіку
+          .number-wrap
+            +svg('logo-mini')
+      .property-advantages__plannings-wrap.container(data-anim-appear)
+        p усе це створює найоптимальніші умови для ведення бізнесу
+        .short-line 
+        a(href="").accent-btn 
+          span ПЕРЕГЛЯНУТИ ПЛАНУВАННЯ
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

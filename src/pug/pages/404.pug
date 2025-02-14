@@ -1,0 +1,43 @@
+extends ../layout/main
+block variable
+    -
+        var headerCustomClass = 'type1' 
+block meta
+    title= '404'
+    meta(name='description' content='')
+
+block head
+    link(rel='stylesheet' href="./assets/styles/main.min.css")
+
+block scripts
+    script(defer src='./assets/scripts/vendors.bundle.js')
+    script(defer src='./assets/scripts/header.bundle.js')
+    script(defer src='./assets/scripts/footer.bundle.js')
+
+block content
+    section.notFound
+        .notFound-bg
+            .lamp-decor
+                img(src="./assets/images/lamp.png" alt="lamp")
+            .notFound__cotent-wrap.container
+                .notFound__img-wrap
+                    img(src="./assets/images/404.png" alt="404")
+                .notFound__text
+                    h1.notFound__title Упс, щось пішло не так...
+                    .notFound-links__wrap 
+                        a.general-btn(href="") 
+                            span  назад
+                        a.general-btn(href="/") 
+                            span На головну
+                        a(href="/").accent-btn 
+                            span  ОБРАТИ КВАРТИРУ
+
+
+
+
+block footer
+    include ../includes/footer.pug
+
+block header
+    include ../includes/header.pug
+

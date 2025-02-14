@@ -1,0 +1,40 @@
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  margin-bottom: 30px;
+
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
+
+  @include desktop {
+    margin-bottom: 60px;
+  }
+}
+
+.breadcrumbs-item__link {
+  color: $text-color;
+  text-decoration: underline
+}
+
+.breadcrumbs-item {
+  @include general-text;
+
+  white-space: nowrap;
+
+  &:last-child {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  a {
+    margin-right: 12px;
+  }
+
+  // &__current--color {
+
+  // }
+}
