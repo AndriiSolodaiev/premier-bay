@@ -1,17 +1,17 @@
 .page-hero {
   padding-top: 106px;
-  background: radial-gradient(circle at 50% 50%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 70%), $accent-color;
+  background: $bg-color;
   overflow: hidden;
 
   .about__title-wrap>.line {
-    background: rgba(246, 246, 246, 0.2);
+    background: rgba(205, 200, 188, 1);
   }
 
 }
 
 .about-page {
   @include laptop {
-    background: $accent-color;
+    background: $bg-color;
 
     .line-with-circle {
       display: none;
@@ -48,7 +48,7 @@
 
   .decor-circle {
 
-    border: 1px solid rgba(246, 246, 246, 0.20);
+    border: 1px solid rgba(205, 200, 188, 1);
     border-radius: 50%;
     display: flex;
     width: 60px;
@@ -61,6 +61,7 @@
     svg {
       width: 8px;
       height: 5px;
+      fill: rgba(0, 0, 0, 1)
     }
 
   }
@@ -88,11 +89,11 @@
 
     .page-hero-descr {
       position: absolute;
-      top: 13vw;
+      top: 50px;
       right: 11vw;
       z-index: 2;
       width: 40vw;
-      color: $bg-color;
+      color: $bc;
       text-align: start;
     }
 
@@ -104,8 +105,8 @@
       right: 0;
       z-index: 1;
       width: 100%;
-      height: 15%;
-      background: linear-gradient(0deg, rgba(50, 42, 50, 0.00) 0%, #322A32 100%);
+      height: 50%;
+      background: linear-gradient(0deg, rgba(255, 255, 246, 0.00) 0%, #FFFFF6 100%);
     }
   }
 }
@@ -129,9 +130,10 @@
   }
 
   .about__text-wrap {
-    background-color: $bg-color;
+    background-color: $wc;
     padding: 32px 20px 48px 20px;
     position: relative;
+    border: 1px solid $border-color;
 
     @include tablet {
       width: 60vw;
@@ -143,7 +145,7 @@
     padding-top: 15px;
     padding-left: 20px;
     @include general-text;
-    border-left: 1px solid rgba(246, 246, 246, 0.20);
+    border-left: 1px solid $border-color;
 
     .icon--points {
       width: 8px;
@@ -166,12 +168,12 @@
 }
 
 .about-arcitecture {
-  background-color: $accent-color;
+  background-color: $bg-color;
   padding-top: 80px;
   overflow: hidden;
 
   @include laptop {
-    background: radial-gradient(circle at 50% -10%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 20%), $accent-color;
+    background: $bg-color;
 
     .about__text-block {
       padding-left: calc(50% + 20px);
@@ -246,7 +248,7 @@
     left: 0;
     width: 100%;
     height: 70%;
-    background: linear-gradient(0deg, rgba(50, 42, 50, 0.00) 0%, rgba(50, 42, 50, 0.75) 49.5%, #322A32 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 246, 0.00) 0%, rgba(255, 255, 246, 0.75) 59.5%, #FFFFF6 100%);
   }
 
   .about-arcitecture__descr {
@@ -303,11 +305,11 @@
 }
 
 .about-location {
-  background: radial-gradient(circle at 44% 50%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 70%), $accent-color;
+  background: $bg-color;
 
   @include laptop {
     padding-bottom: 210px;
-    background: radial-gradient(circle at 50% 50%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 50%), $accent-color;
+    background: $bg-color;
 
     .about__title-wrap {
       .line {
@@ -420,9 +422,9 @@
       left: 0;
       width: 100%;
       @include general-text;
-      color: $wc;
+      color: $bc;
       padding: 40px 20px 80px;
-      background: linear-gradient(180deg, rgba(50, 42, 50, 0.00) 0%, rgba(50, 42, 50, 0.80) 35%, #322A32 100%);
+      background: linear-gradient(180deg, rgba(205, 200, 188, 0.00) 0%, rgba(205, 200, 188, 0.80) 35%, #CDC8BC 100%);
 
       @include tablet {
         padding: 40px 40px 120px;
@@ -470,10 +472,10 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    background-color: $text-color-2;
+    background-color: $wc;
 
     svg path {
-      stroke: $bg-color;
+      stroke: $bc;
     }
   }
 }
@@ -485,9 +487,7 @@
     background-color: $bg-color;
     box-shadow: none;
 
-    svg path {
-      stroke: $wc;
-    }
+    svg path {}
   }
 }
 
@@ -504,7 +504,7 @@
 .about-safety {
   padding-top: 80px;
   overflow: hidden;
-  background: radial-gradient(circle at 44% 40%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 60%), $accent-color;
+  background: $bg-color;
   padding-bottom: 20px;
 
   @include laptop {
@@ -530,6 +530,7 @@
         @include subtitle-text;
         width: 45%;
         margin: 0;
+        color: $bc
       }
 
       img {
@@ -551,7 +552,7 @@
     padding-left: 20px;
     padding-right: 20px;
     @include general-text;
-    color: $text-color;
+    color: $bc;
     margin-bottom: 60px;
 
     @include laptop {
@@ -578,7 +579,7 @@
   &__card {
     border-radius: 20px;
     overflow: hidden;
-    background-color: $bg-color;
+    background-color: $bg-color-2;
 
     @include laptop {
       width: calc((100% - 40px) / 3);
@@ -606,7 +607,7 @@
 
     p {
       padding-left: 20px;
-      border-left: 1px solid rgba(205, 200, 188, 0.2);
+      border-left: 1px solid $wc;
       @include general-text;
     }
   }
@@ -626,6 +627,13 @@
     }
 
     .about__text-wrap {
+      background-color: transparent;
+      border: none;
+
+      p {
+        border-color: $wc;
+      }
+
       @include tablet {
         width: 100%;
       }
@@ -646,7 +654,7 @@
         top: 32px;
         width: calc(100% - 40px);
         height: 70%;
-        background-color: $text-color-2;
+        background-color: $wc;
         border-radius: 50%;
       }
     }

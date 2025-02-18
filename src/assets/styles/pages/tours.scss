@@ -1,5 +1,5 @@
 .tours-hero {
-  background: radial-gradient(circle at 50% 40%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 70%), $accent-color;
+  // background: radial-gradient(circle at 50% 40%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 70%), $accent-color;
 
   @include tablet {
     padding-bottom: 50px;
@@ -63,21 +63,21 @@
   &__btn {
     padding: 5px 14px;
     border-radius: 8px;
-    border: 1px solid $text-color-2;
+    border: 1px solid $border-color;
     transition: border-color 0.4s ease-in-out, background-color 0.4s ease-in-out;
 
     &.active {
-      border-color: $bg-color;
-      background-color: $bg-color;
+      border-color: $accent-color;
+      background-color: $accent-color;
 
       span {
-        color: $text-color;
+        color: $wc;
       }
     }
 
     span {
       @include general-text;
-      color: $bg-color;
+      color: $bc;
       transition: color 0.4s ease-in-out;
     }
   }

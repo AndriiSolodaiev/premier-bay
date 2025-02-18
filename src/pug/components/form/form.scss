@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(34, 26, 34, 0.90);
+  background-color: rgba(0, 0, 0, 0.50);
   top: 0;
   // backdrop-filter: blur(12px);
   // -webkit-backdrop-filter: blur(12px);
@@ -20,8 +20,10 @@
 
   }
 
+
   .form-wrap {
     transition: transform 0.3s ease-in-out 0.3s, opacity 0.3s ease 0.3s;
+    background-color: $bg-color-2;
 
     @include tablet {
       width: 688px;
@@ -109,6 +111,10 @@
   svg {
     width: 14px;
     height: 14px;
+
+    path {
+      fill: $bc
+    }
   }
 
   @include laptop {
@@ -182,7 +188,7 @@
 
 .input-title {
   @include general-text;
-  color: $wc;
+  color: $bc;
 
 
   @include tablet {}
@@ -206,6 +212,7 @@
 }
 
 .form-field__input {
+  border: none;
   width: 100%;
   padding: 18px 20px;
   @include general-text;

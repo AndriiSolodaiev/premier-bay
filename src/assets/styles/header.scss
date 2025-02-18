@@ -105,7 +105,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    background: linear-gradient(180deg, #da8950 0%, #bd713c 100%);
+    background: $accent-color-hover;
     box-shadow: 0px 2px 2px 0px #F0924F inset, 0px -2px 2px 0px #F0924F inset;
     width: 100%;
     height: 100%;
@@ -122,7 +122,7 @@
   &:active {
 
     // background: linear-gradient(180deg, #0CC371 0%, #006739 100%);
-    box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
+    // box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
 
     &:after {
       opacity: 1;
@@ -135,7 +135,7 @@
   .accent-btn {
     &:hover {
       // background: linear-gradient(180deg, #0CC371 0%, #006739 100%);
-      box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
+      // box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
 
       &:after {
         opacity: 1;
@@ -292,13 +292,14 @@
   }
 
   .general-btn {
-    background: $wc;
-    color: $bg-color;
+    background-color: $wc;
+    color: $bc;
     box-shadow: none;
     transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    border: none;
 
     &.active {
-      background-color: $bg-color;
+      background-color: $accent-color;
       color: $wc;
     }
   }
@@ -360,7 +361,7 @@
   z-index: 99;
   width: 100%;
   height: 100%;
-  background-image: url('../images/menu-bg.jpg');
+  background-image: url('../images/Menu/BG.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 100px 20px 20px;
@@ -378,7 +379,7 @@
 
   @include laptop {
 
-    background-image: url('../images/menu-bg-pc.jpg');
+    background-image: url('../images/Menu/BG.jpg');
     display: flex;
     padding: 15vh 40px 40px 40px;
     gap: 40px;
@@ -417,8 +418,8 @@
   overflow: hidden;
   position: relative;
   padding: 11px 0px;
-  border-top: 1px solid #403939;
-  border-bottom: 1px solid #403939;
+  // border-top: 1px solid #403939;
+  // border-bottom: 1px solid #403939;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -430,7 +431,7 @@
     border-bottom: none;
 
     @include laptop {
-      border-bottom: 1px solid #403939;
+      // border-bottom: 1px solid #403939;
 
     }
   }
@@ -451,7 +452,7 @@
       z-index: 2;
       width: 100%;
       height: 1px;
-      background-color: #766B6B;
+      background-color: $accent-color;
       transform: translateX(-100%);
       transition: transform 0.5s ease-in-out;
     }
@@ -464,7 +465,7 @@
       z-index: 2;
       width: 100%;
       height: 1px;
-      background-color: #766B6B;
+      background-color: $accent-color;
       transform: translateX(100%);
       transition: transform 0.5s ease-in-out;
     }
@@ -473,7 +474,8 @@
 
 .desktop {
   .menu-item:hover {
-    color: $wc;
+
+    color: $accent-color;
 
     &::after,
     &::before {
@@ -522,7 +524,7 @@
 .menu-block {
   overflow: hidden;
   border-radius: 8px;
-  border: 1px solid #403939;
+  // border: 1px solid #403939;
   padding: 20px;
   padding-bottom: 26px;
   width: 100%;
@@ -666,21 +668,24 @@
   }
 
   .deap-mask {
-    display: none;
 
-    @include laptop {
-      display: block;
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(circle at 50% 100%, #9a539a, #ffffff00 70%);
-      opacity: 0.7;
-      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/Menu/Sky.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+
+    &.girl {
+      background-image: url("../images/Menu/Sky-girl.jpg");
 
     }
+
   }
 
   .top-mask {
@@ -710,12 +715,12 @@
       opacity: 1;
     }
 
-    .menu-block__text p {
-      color: $wc;
-    }
+    // .menu-block__text p {
+    //   color: $wc;
+    // }
 
     .deap-mask {
-      transform: scale(1.2);
+      // transform: scale(1.2);
     }
   }
 }
@@ -723,9 +728,8 @@
 .menu-contact-block {
 
   border-radius: 8px;
-  border: 1px solid #403939;
+  border: 1px solid #CDC8BC;
   padding: 20px;
-
   width: 100%;
   display: flex;
   justify-content: center;
@@ -768,6 +772,7 @@
 
       path {
         transition: fill 0.4s ease-in-out;
+        fill: $bc;
       }
 
       @include laptop {
@@ -785,7 +790,7 @@
         transform: scale(1.2);
 
         path {
-          fill: $text-color-2
+          fill: $accent-color;
         }
       }
     }

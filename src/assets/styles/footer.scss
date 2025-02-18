@@ -3,12 +3,16 @@
   max-width: 100vw;
   position: relative;
   z-index: 2;
-  background-color: $accent-color;
+  background-color: $bg-color;
   padding-top: 80px;
   overflow: hidden;
+  background-image: url("../images/footer.png");
+  background-position: bottom right;
+  // background-size: cover;
+  background-repeat: no-repeat;
 
   &-title {
-    color: $wc;
+    color: $bc;
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
@@ -36,6 +40,11 @@
 }
 
 .footer-content {
+  .form-field__input {
+    background-color: $bg-color;
+    border: 1px solid rgba(205, 200, 188, 0.50);
+  }
+
   @include laptop {
     display: flex;
     align-items: stretch;
@@ -54,6 +63,8 @@
       .form-wrapper {
         width: 100%
       }
+
+
     }
 
     .contact-info {
@@ -98,12 +109,12 @@
 .form-wrap {
   position: relative;
   padding: 60px 20px;
-  background-image: linear-gradient(#292129b9, #292129b7), url("../images/form-bg.jpg");
+  background-color: rgba(255, 255, 255, 0.80);
   background-position: center;
   background-size: cover;
   border-radius: 12px;
-  background-blend-mode: color;
-  box-shadow: 0px 0px 80px 0px #161016;
+  // background-blend-mode: color;
+  // box-shadow: 0px 0px 80px 0px #161016;
   // backdrop-filter: blur(30px);
 
   @include tablet {
@@ -121,7 +132,7 @@
 }
 
 .form-title {
-  color: $wc;
+  color: $bc;
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -183,9 +194,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: $bg-color;
+    background-color: $accent-color;
     transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    box-shadow: 0px 1px 0px 0px #5A4C5A inset, 0px 12px 60px 0px #140E14, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+    // box-shadow: 0px 1px 0px 0px #5A4C5A inset, 0px 12px 60px 0px #140E14, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
 
 
     @include tablet {
@@ -204,8 +215,8 @@
 .desktop {
   .up-btn-wrap:hover {
     .up-btn {
-      background-color: #321931;
-      box-shadow: 0px 1px 2px 0px #814180, 0px -8px 11.2px 0px rgba(96, 49, 95, 0.15) inset, 0px 1px 0px 0px #814180 inset, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+      background-color: $accent-color-hover;
+      // box-shadow: 0px 1px 2px 0px #814180, 0px -8px 11.2px 0px rgba(96, 49, 95, 0.15) inset, 0px 1px 0px 0px #814180 inset, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
 
     }
   }
@@ -239,7 +250,7 @@
   }
 
   &>p {
-    color: $text-color;
+    color: $bc;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -255,7 +266,7 @@
   }
 
   &>a:not(.general-btn) {
-    color: $text-color;
+    color: $bc;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -273,7 +284,7 @@
   }
 
   & .phone-wrap>a:not(.general-btn) {
-    color: $text-color;
+    color: $bc;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -282,13 +293,13 @@
     text-transform: uppercase;
 
     svg path {
-      fill: $text-color;
+      fill: $bc;
       transition: fill 0.4s ease;
     }
 
     &:hover {
       svg path {
-        fill: $text-color-2;
+        fill: $accent-color;
       }
     }
 
@@ -317,13 +328,13 @@
     height: 40px;
 
     svg path {
-      fill: $text-color;
+      fill: $bc;
       transition: fill 0.4s ease;
     }
 
     &:hover {
       svg path {
-        fill: $text-color-2;
+        fill: $accent-color;
       }
     }
   }

@@ -1,9 +1,9 @@
 .single-progress {
-  background: radial-gradient(circle at 44% 60vh, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 50%), $accent-color;
+  background: $bg-color;
 
-  @media screen and (min-width: 1065px) {
-    background: radial-gradient(circle at 50% 100vh, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 60%), $accent-color;
-  }
+  // @media screen and (min-width: 1065px) {
+  //   background: radial-gradient(circle at 50% 100vh, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 60%), $accent-color;
+  // }
 
   .progress-card__date-wrap {
     @media screen and (min-width: 1065px) {
@@ -17,13 +17,13 @@
     }
 
     .progress-card__day {
-      color: $text-color-2;
-      border-right-color: rgba(246, 246, 246, 0.2);
+      color: $bc;
+      border-right-color: $border-color;
     }
 
     .progress-card__year,
     .progress-card__month {
-      color: $text-color;
+      color: $bc;
 
     }
   }
@@ -57,9 +57,9 @@
           justify-content: center;
           align-items: center;
           border-radius: 50%;
-          background-color: $bg-color;
+          background-color: $accent-color;
           transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-          box-shadow: 0px 1px 0px 0px #5A4C5A inset, 0px 12px 60px 0px #140E14, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+          // box-shadow: 0px 1px 0px 0px #5A4C5A inset, 0px 12px 60px 0px #140E14, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
 
 
           @include tablet {
@@ -80,6 +80,19 @@
   .navigation-about {
     position: static;
     width: 100%;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      background-color: $accent-color;
+
+      svg path {
+        stroke: $wc
+      }
+    }
+
+    .numbers-slides span {
+      color: $bc;
+    }
   }
 
   &__content {
@@ -89,7 +102,7 @@
     margin-top: 20px;
     background-color: $wc;
     border-radius: 20px;
-
+    border: 1px solid $border-color;
 
     @media screen and (min-width: 1065px) {
       max-width: 1065px;
@@ -140,13 +153,13 @@
 
   &__title {
     @include subtitle-text;
-    color: $bg-color;
+    color: $bc;
     margin-bottom: 20px;
   }
 
   &__general-text {
     @include general-text;
-    color: $bg-color;
+    color: $bc;
     margin-bottom: 20px;
   }
 
@@ -156,7 +169,7 @@
 
     li {
       @include general-text;
-      color: $bg-color;
+      color: $bc;
       list-style-type: disc;
       margin-left: 17px;
     }
@@ -173,10 +186,28 @@
 }
 
 .desktop {
+  .single-progress .navigation-about {
+
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      &:hover {
+        background-color: $accent-color-hover;
+      }
+
+
+
+    }
+
+    .numbers-slides span {
+      color: $bc;
+    }
+  }
+
   .btn-back-wrap:hover {
     .btn-back {
-      background-color: #321931;
-      box-shadow: 0px 1px 2px 0px #814180, 0px -8px 11.2px 0px rgba(96, 49, 95, 0.15) inset, 0px 1px 0px 0px #814180 inset, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+      background-color: $accent-color-hover;
+      // box-shadow: 0px 1px 2px 0px #814180, 0px -8px 11.2px 0px rgba(96, 49, 95, 0.15) inset, 0px 1px 0px 0px #814180 inset, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
 
     }
   }
@@ -185,7 +216,7 @@
 .last-progress {
   padding-top: 150px;
   padding-bottom: 20px;
-  background-color: $accent-color;
+  background-color: $bg-color;
   position: relative;
   top: -1px;
 

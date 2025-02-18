@@ -233,12 +233,12 @@ section {
     //   stroke: $bg-color;
     // }
 
-    background-color: $text-color-2;
-    box-shadow: 0px 1px 2px 0px rgba(180, 164, 166, 0.20),
-      0px -8px 11.2px 0px #D2C5C4 inset,
-      0px 1px 0px 0px #F1E0DE inset,
-      0px 9px 30px 0px rgba(226, 208, 207, 0.10) inset,
-      0px 0px 8px 0px #A89B84 inset;
+    background-color: $accent-color-hover;
+    // box-shadow: 0px 1px 2px 0px rgba(180, 164, 166, 0.20),
+    //   0px -8px 11.2px 0px #D2C5C4 inset,
+    //   0px 1px 0px 0px #F1E0DE inset,
+    //   0px 9px 30px 0px rgba(226, 208, 207, 0.10) inset,
+    //   0px 0px 8px 0px #A89B84 inset;
   }
 }
 
@@ -632,7 +632,7 @@ section {
   height: 1px;
   width: 100%;
   // opacity: 0.2;
-  background: rgba(246, 246, 246, 0.2);
+  background: rgba(205, 200, 188, 1);
   margin-bottom: 12px;
 
   @include tablet {
@@ -641,6 +641,7 @@ section {
 }
 
 .about-content {
+  overflow: hidden;
   background-image: url('../images/About/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -686,12 +687,21 @@ section {
 
     @include subtitle-text;
     margin-bottom: 28px;
+    color: $bc;
+
+    @include laptop {
+      color: $wc;
+    }
   }
 
   p {
     @include general-text;
     padding-left: 58px;
-    color: $wc
+    color: $bc;
+
+    @include laptop {
+      color: $wc;
+    }
   }
 
   .about-video {
@@ -789,7 +799,8 @@ section {
 .tablet.landscape,
 .mobile.landscape {
   .about-content__text-wrap {
-    background: rgba(50, 42, 50, 0.50);
+    background: rgba(187, 102, 41, 0.90);
+
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 3.125vw 2vw;
@@ -808,12 +819,23 @@ section {
     }
 
     h3 {
+
       @include adaptive-font(40, 10)
     }
 
     p {
+
       @include adaptive-font(20, 5)
     }
+
+    .general-btn {
+      border: 1px solid #CDC48F;
+      background: #F2F2EA;
+      box-shadow: 0px 2px 2px 0px #FFF9D9 inset, 0px -2px 2px 0px #FFF9D9 inset;
+      color: $bc;
+    }
+
+
 
     .about-btn-wrap {
       padding: 0
@@ -826,56 +848,109 @@ section {
   margin-top: 28px;
 }
 
+// .general-btn {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: $wc;
+//   padding: 18px;
+//   width: fit-content;
+//   text-wrap: nowrap;
+//   white-space: nowrap;
+//   @include tiny-text;
+//   border-radius: 100px;
+//   border: 1px solid rgba(90, 76, 90, 0.562);
+//   overflow: hidden;
+//   background-color: #221A22;
+//   box-shadow: 0px 12px 60px 0px #140E14, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+//   transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+
+//   &:active {
+//     border-color: rgba(90, 76, 90, 0.20);
+//     background-color: #321931;
+//     box-shadow: 0px 1px 2px 0px #814180,
+//       0px -8px 11.2px 0px rgba(96, 49, 95, 0.15) inset,
+//       0px 1px 0px 0px #814180 inset,
+//       0px 12px 60px 0px #140E14,
+//       0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset,
+//       0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+//   }
+
+//   @include tablet {
+//     padding: 20px 28px;
+//   }
+
+
+// }
+
 .general-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: $wc;
-  padding: 18px;
-  width: fit-content;
-  text-wrap: nowrap;
-  white-space: nowrap;
   @include tiny-text;
   border-radius: 100px;
-  border: 1px solid rgba(90, 76, 90, 0.562);
-  overflow: hidden;
-  background-color: #221A22;
-  box-shadow: 0px 12px 60px 0px #140E14, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
-  transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out;
+  border: 1px solid #A34F12;
+  background-color: $accent-color;
+  box-shadow: 0px 2px 2px 0px #F0924F inset, 0px -2px 2px 0px #F0924F inset;
+  padding: 14px 18px;
+  transition: all 0.4s ease-in-out;
+  display: block;
+  width: fit-content;
+  position: relative;
 
-  &:active {
-    border-color: rgba(90, 76, 90, 0.20);
-    background-color: #321931;
-    box-shadow: 0px 1px 2px 0px #814180,
-      0px -8px 11.2px 0px rgba(96, 49, 95, 0.15) inset,
-      0px 1px 0px 0px #814180 inset,
-      0px 12px 60px 0px #140E14,
-      0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset,
-      0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+  span {
+    white-space: nowrap;
   }
+
+  span,
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+
+
 
   @include tablet {
     padding: 20px 28px;
+
   }
 
+  &:active {
+
+    // background: linear-gradient(180deg, #0CC371 0%, #006739 100%);
+    background: $accent-color-hover;
+    // box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
+
+
+  }
 
 }
 
 .desktop {
   .general-btn {
     &:hover {
-      color: $wc;
-      border: 1px solid rgba(90, 76, 90, 0.20);
-      background-color: #321931;
-      box-shadow: 0px 1px 2px 0px #814180,
-        0px -8px 11.2px 0px rgba(96, 49, 95, 0.15) inset,
-        0px 1px 0px 0px #814180 inset,
-        0px 12px 60px 0px #140E14,
-        0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset,
-        0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+      background-color: $accent-color-hover;
+      color: $wc // background: linear-gradient(180deg, #0CC371 0%, #006739 100%);
+        // box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
+
+
     }
   }
 }
+
+// .desktop {
+//   .general-btn {
+//     &:hover {
+//       color: $wc;
+//       border: 1px solid rgba(90, 76, 90, 0.20);
+//       background-color: #321931;
+//       box-shadow: 0px 1px 2px 0px #814180,
+//         0px -8px 11.2px 0px rgba(96, 49, 95, 0.15) inset,
+//         0px 1px 0px 0px #814180 inset,
+//         0px 12px 60px 0px #140E14,
+//         0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset,
+//         0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+//     }
+//   }
+// }
 
 .fake-section {
   height: calc(100lvh - 40px);
@@ -1196,7 +1271,9 @@ section {
 // }
 
 .location-content {
-  background: radial-gradient(circle at -20% 30%, #AC7E66 1%, #221a22 70%);
+  background-image: url('../images/Location/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100lvh;
   padding: 40px 0 100px;
   // border-bottom-left-radius: 20px;
@@ -1237,6 +1314,8 @@ section {
     margin-bottom: 28px;
     padding-left: 20px;
     padding-right: 20px;
+
+    color: $bc;
 
     @include tablet {
       margin-bottom: 40px;
@@ -1303,6 +1382,7 @@ section {
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 80px;
+  margin-bottom: 80px;
   width: 100%;
   height: 60vh;
   // border-radius: 20px;
@@ -1311,6 +1391,7 @@ section {
   // overflow: hidden;
 
   @include tablet {
+    margin-bottom: 0;
     padding-left: 40px;
     padding-right: 40px;
 
@@ -1441,7 +1522,7 @@ section {
     border-radius: 100px;
     background-color: $wc;
     padding: 6px 12px;
-    color: $bg-color;
+    color: $bc;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -1475,7 +1556,7 @@ section {
 .tour {
   margin-top: -20px;
   border-radius: 20px;
-  background-color: $wc;
+  background-color: $bg-color;
   padding: 80px 20px;
   position: relative;
   z-index: 2;
@@ -1485,7 +1566,7 @@ section {
   }
 
   .tour-title {
-    color: $accent-color;
+    color: $bc;
     top: 80px;
 
     @include tablet {
@@ -1591,7 +1672,7 @@ section {
 
 
     @include subtitle-text;
-    color: $bg-color;
+    color: $bc;
     margin-bottom: 28px;
 
   }
@@ -1599,7 +1680,7 @@ section {
   p {
     @include general-text;
     padding-left: 58px;
-    color: $bg-color;
+    color: $bc;
     margin-bottom: 30px;
 
     @include laptop {
@@ -1626,18 +1707,18 @@ section {
 }
 
 .advantages {
-  background-color: $accent-color;
-  padding: 80px 0px;
+  background-color: $bg-color;
+  padding: 0px;
   margin-top: -20px;
   margin-bottom: -20px;
 
   @include tablet {
-    padding: 170px 40px;
+    padding: 0 40px;
   }
 
   @include laptop {
 
-    padding: 210px 0px 0px;
+    padding: 0px;
 
   }
 
@@ -1651,23 +1732,25 @@ section {
   }
 
   .advantages {
-    padding: 210px 0px 0px;
+    padding: 0px;
   }
 }
 
 .advantages-wrapper {
   position: relative;
+  z-index: 2;
 
   @include laptop {
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    border-radius: 40px;
+
 
     display: flex;
     padding: 210px 40px;
     justify-content: space-between;
-    background-image: radial-gradient(circle at 55% 60%, rgba(172, 126, 102, 0.50) 1%, rgba(238, 130, 238, 0) 60%),
+    background-image:
       url('../images/Advantages/bg-pc.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
   }
 
@@ -1681,13 +1764,13 @@ section {
     display: flex;
     padding: 210px 40px;
     justify-content: space-between;
-    background-image: radial-gradient(circle at 55% 60%, rgba(172, 126, 102, 0.50) 1%, rgba(238, 130, 238, 0) 60%),
+    background-image:
       url('../images/Advantages/bg-pc.jpg');
   }
 }
 
 .advantages-title {
-  color: $wc;
+  color: $bc;
   font-size: 64px;
   font-style: normal;
   font-weight: 400;
@@ -1746,9 +1829,9 @@ section {
 
 .advantage-card {
   border-radius: 20px;
-  border: 1px solid $accent-color;
+  border: 1px solid rgba(255, 255, 246, 0.40);
   // background:  linear-gradient(0deg, rgba(34, 26, 34, 0.50) 0%, rgba(34, 26, 34, 0.50) 100%), linear-gradient(270deg, rgba(34, 26, 34, 0.20) 0%, rgba(34, 26, 34, 0.70) 50.48%, #221A22 100%);
-  background-color: $accent-color;
+  background-color: $bg-color;
   height: calc(100vw * 0.9);
   width: 100%;
   position: sticky;
@@ -1829,6 +1912,7 @@ section {
   h3 {
     @include subtitle-text;
     margin-bottom: 18px;
+    color: $bg-color;
 
     @include tablet {
       margin-bottom: 10px;
@@ -1838,6 +1922,7 @@ section {
   p {
     @include general-text;
     max-width: 60%;
+    color: $bg-color;
   }
 
   .number-wrap {
@@ -1846,7 +1931,7 @@ section {
     justify-content: space-between;
     align-items: flex-end;
     justify-self: flex-end;
-    color: $text-color-2;
+    color: $bg-color;
     font-family: $default-font2;
     font-size: 96px;
     font-style: normal;
@@ -1858,6 +1943,7 @@ section {
       font-size: 200px;
 
       svg {
+        display: none;
         width: 46px;
         height: 23px;
       }
@@ -2065,5 +2151,100 @@ section {
   .property-title-wrap {
     top: -10vw;
     left: 30vw;
+  }
+}
+
+.parking {
+  background-color: $bg-color;
+  padding-top: 80px;
+
+  @include laptop {
+    padding: 0 40px;
+    height: 100vh;
+    // padding: 210px 40px 150px;
+  }
+}
+
+.parking-bg {
+  width: 100%;
+
+  @include laptop {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+.parking__img-wrap {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+
+  @include laptop {
+    width: 50%;
+    height: auto;
+    border-radius: 40px;
+
+    flex: 1;
+  }
+
+  img {
+    width: 100%;
+    // height: 100%;
+    // object-fit: cover;
+    // object-position: center;
+  }
+}
+
+.parking__text-content {
+  padding: 20px;
+
+  @include laptop {
+    width: 50%;
+
+
+    padding: 0;
+    padding-left: 8vw;
+  }
+}
+
+.parking-title {
+  color: $bc;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+
+
+
+  @include laptop {
+
+    @include adaptive-font(120, 20);
+
+  }
+}
+
+.tablet.landscape,
+.mobile.landscape {
+  .parking-title {
+    width: 50%;
+
+    @include adaptive-font(120, 20)
+  }
+}
+
+.parking-descr {
+  @include general-text;
+  color: $bc;
+  margin-bottom: 40px;
+
+  @include laptop {
+    margin-bottom: 60px;
+    max-width: 65%;
   }
 }

@@ -16,7 +16,7 @@
 }
 
 .breadcrumbs-item__link {
-  color: $text-color;
+  color: $bc;
   text-decoration: underline
 }
 
@@ -34,7 +34,7 @@
     margin-right: 12px;
   }
 
-  // &__current--color {
-
-  // }
+  &__current--color {
+    color: $accent-color;
+  }
 }
