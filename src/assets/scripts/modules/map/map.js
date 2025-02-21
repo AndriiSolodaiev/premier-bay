@@ -231,7 +231,7 @@ function initMap() {
       type: 'mall',
       icon: { url: markersAdresses.mall, scaledSize: defaultMarkerSize },
       position: { lat: 49.2275383, lng: 28.3960388 },
-      text: 'ТЦ «Plaza Park» - вулиця Келецька, 121, Вінниця, Вінницька область, Украина, 21000',
+      text: 'ТЦ "Dnipro Plaza" - Припортова, 34',
     },
     {
       type: 'mall',

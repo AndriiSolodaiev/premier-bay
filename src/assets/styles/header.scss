@@ -8,11 +8,13 @@
 }
 
 .header-bg {
-  background: linear-gradient(180deg, #FFFFF6 0%, rgba(255, 255, 246, 0.00) 100%);
+  background: linear-gradient(180deg, #FFFFF6 0%, #fffff6b4 70%, rgba(255, 255, 246, 0.00) 100%);
   padding: 4px 12px;
   display: flex;
   align-items: center;
   pointer-events: none;
+  // backdrop-filter: blur(12px);
+  // -webkit-backdrop-filter: blur(12px);
 
   &>* {
     pointer-events: all;
@@ -24,8 +26,8 @@
   }
 
   .logo-wrap {
-    width: 191px;
-    height: 34px;
+    width: 130px;
+    height: 22px;
     margin-right: auto;
 
     svg {
@@ -79,6 +81,7 @@
   display: block;
   width: fit-content;
   position: relative;
+  white-space: nowrap;
 
   span,
   svg {
@@ -531,11 +534,13 @@
   position: relative;
   margin-bottom: 8px;
   display: block;
+  // height: 132px;
 
   @include tablet {
     padding: 30px;
     padding-bottom: 38px;
     margin-bottom: 13px;
+    // height: 183px;
   }
 
   @include laptop {
@@ -544,7 +549,8 @@
     padding: 0;
     padding-top: 40px;
     margin-bottom: 0px;
-    width: calc((100% - 2vw) / 2)
+    width: calc((100% - 2vw) / 2);
+    height: auto;
   }
 
   &:last-child {
@@ -604,12 +610,12 @@
     right: 0;
     height: 110%;
     width: auto;
-    max-width: 30%;
+
 
     img {
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     @include tablet {
@@ -628,6 +634,7 @@
 
       img {
         object-position: left;
+        object-fit: cover;
       }
     }
   }
@@ -648,7 +655,7 @@
     }
 
     @include tablet {
-      left: 53px;
+      // left: 53px;
       max-width: 40%;
 
     }

@@ -393,7 +393,7 @@
   .swiper-slide {
     border-radius: 20px;
     overflow: hidden;
-    height: 137vw;
+    height: 120vw;
 
     @include tablet {
       height: auto;
@@ -427,7 +427,7 @@
       background: linear-gradient(180deg, rgba(205, 200, 188, 0.00) 0%, rgba(205, 200, 188, 0.80) 35%, #CDC8BC 100%);
 
       @include tablet {
-        padding: 40px 40px 120px;
+        padding: 40px 40px 100px;
       }
     }
   }
@@ -456,6 +456,10 @@
     padding: 40px;
     left: 40px;
     width: calc(100% - 80px);
+  }
+
+  @include laptop {
+    padding: 40px 0;
   }
 
   .arrows-wrap {
@@ -492,6 +496,10 @@
 }
 
 .about-advantages.advantages {
+  @include tablet {
+    padding-top: 150px;
+  }
+
   @include laptop {
     padding-top: 0;
 
@@ -507,6 +515,33 @@
   background: $bg-color;
   padding-bottom: 20px;
 
+
+
+  &__camera-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1.5/1;
+    margin-bottom: 40px;
+
+  }
+
+  img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+
+  }
+
+  @include tablet {
+    &__descr-wrap {
+      padding-left: 40px;
+      padding-right: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
   @include laptop {
     .about__title-wrap {
       .line {
@@ -520,33 +555,48 @@
       }
     }
 
+    &__camera-wrap {
+      aspect-ratio: 2.6/1;
+      width: 65%;
+
+
+    }
+
     &__descr-wrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 80px;
+      padding-left: 40px;
+      padding-right: 40px;
 
       p {
         @include subtitle-text;
-        width: 45%;
+        width: 35%;
         margin: 0;
+        margin-left: 20px;
         color: $bc
       }
 
+
+
       img {
-        width: 45%;
-        margin: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+
       }
     }
   }
 
 
 
-  &__camera {
-    padding-left: 37px;
-    padding-right: 37px;
-    margin-bottom: 40px;
-  }
+  // &__camera-wrap {
+  //   padding-left: 37px;
+  //   padding-right: 37px;
+  //   margin-bottom: 40px;
+  // }
 
   &__descr {
     padding-left: 20px;
@@ -580,6 +630,15 @@
     border-radius: 20px;
     overflow: hidden;
     background-color: $bg-color-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:last-child {
+      img {
+        object-position: top left;
+      }
+    }
 
     @include laptop {
       width: calc((100% - 40px) / 3);
@@ -590,6 +649,9 @@
 
   &__card-img-wrap {
     position: relative;
+    flex: 1;
+
+
 
     .mask {
       position: absolute;
@@ -598,7 +660,7 @@
       left: 0;
       width: 100%;
       height: 37.5%;
-      background: linear-gradient(180deg, rgba(34, 26, 34, 0.00) 0%, rgba(34, 26, 34, 0.75) 49.5%, #221A22 100%);
+      // background: linear-gradient(180deg, rgba(34, 26, 34, 0.00) 0%, rgba(34, 26, 34, 0.75) 49.5%, #221A22 100%);
     }
   }
 

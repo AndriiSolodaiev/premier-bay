@@ -218,12 +218,13 @@
   padding-bottom: 20px;
   background-color: $bg-color;
   position: relative;
-  top: -1px;
+
 
   &__title {
     @include subtitle-text;
     margin-bottom: 40px;
     font-size: 36px;
+    color: $bc;
 
     @include tablet {
       font-size: 64px;

@@ -139,7 +139,7 @@ if (window.innerWidth > 1365) {
       yPercent: 0,
     },
     {
-      yPercent: 100,
+      yPercent: 50,
       ease: 'none',
     },
   );

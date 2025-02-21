@@ -363,8 +363,8 @@ function aboutAnim() {
         end: 'bottom top', // Коли закінчується
         scrub: true, // Плавна анімація
         // markers: true,
-        // pin: '.about-wrap', // Затримка (пінінг) блока
-        pin: '.about__anim-svg', // Затримка (пінінг) блока
+        pin: '.about-wrap', // Затримка (пінінг) блока
+        // pin: '.about__anim-svg', // Затримка (пінінг) блока
         onLeaveBack: () => {
           // aboutImg.reverse();
         },

@@ -31,7 +31,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url("../images/form-bg.jpg");
+    background-color: $bg-color-2;
 
     @include tablet {
       padding: 60px;
@@ -49,6 +49,10 @@
       width: 100px;
       height: 100px;
       margin-bottom: 20px;
+
+      path {
+        stroke: $bc
+      }
     }
 
     @include tablet {}
@@ -61,7 +65,7 @@
   }
 
   & .thank-you-popup__title {
-    color: $text-color;
+    color: $bc;
     @include adaptive-font(64, 36);
     text-transform: uppercase;
     margin-bottom: 8px;
@@ -69,7 +73,7 @@
   }
 
   & .thank-you-popup__descr {
-    color: $text-color-2;
+    color: $bc;
     @include adaptive-font(20, 16);
     text-align: center;
     margin-bottom: 20px;
@@ -90,6 +94,11 @@
     svg {
       width: 24px;
       height: 24px;
+
+      path {
+        stroke: $bc;
+        stroke-width: 1px;
+      }
     }
   }
 }
