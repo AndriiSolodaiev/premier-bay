@@ -47,16 +47,19 @@ function initMap() {
   //   lat: 49.2281012,
   //   lng: 28.3925433,
   // };
+  const lat = window.innerWidth < 768 ? 49.4381135 : 49.437254;
+  const lng = window.innerWidth < 768 ? 32.0933513 : 32.096053;
   const center = {
-    lat: 49.2330266,
-    lng: 28.3977645,
+    lat,
+    lng,
   };
 
   const choosedCategories = new Set();
+  const zoomMap = window.innerWidth < 768 ? 15.5 : 16;
   choosedCategories.add('main');
   const filterItems = document.querySelectorAll('[data-marker]');
   const map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
+    zoom: zoomMap,
     center,
     scrollwheel: false,
     navigationControl: false,
@@ -111,255 +114,162 @@ function initMap() {
     petrolStation: `${baseFolder}petrol-station.svg`,
     busStop: `${baseFolder}bus-stop.svg`,
     carWashing: `${baseFolder}car-washing.svg`,
+    quay: `${baseFolder}quay.svg`,
+    fun: `${baseFolder}fun.svg`,
+    tire: `${baseFolder}tire.svg`,
   };
   const markersData = [
     {
       type: 'main',
       icon: { url: markersAdresses.main, scaledSize: buildLogoSize },
-      position: { lat: 49.2281991, lng: 28.3926229 },
-      text: 'ЖК Twins м. Вінниця, вул. Келецька, 123-А',
+      position: { lat: 49.4411238, lng: 32.0931392 },
+      text: 'ЖК Premier Bay, м. Черкаси, вул. Героїв Дніпра',
     },
     {
       type: 'school',
       icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2300049, lng: 28.3949817 },
-      text: 'Школа «Гарант» - вулиця Келецька, 126а, Вінниця, Вінницька область, Украина, 21029',
+      position: { lat: 49.4368178, lng: 32.0888686 },
+      text: 'Гімназія №31 - вул. Г.Дніпра, 27',
     },
     {
       type: 'school',
       icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2314283, lng: 28.3996741 },
-      text: 'Школа #35  - вулиця Миколи Ващука, 10, Вінниця, Вінницька область, Украина, 21029',
+      position: { lat: 49.4381135, lng: 32.0933513 },
+      text: 'Спеціалізована школа №33 імені Василя Симоненка - вул. Г.Дніпра,13',
     },
     {
       type: 'school',
       icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2322123, lng: 28.4038258 },
-      text:
-        'Школа мистецтв «Вишенька» - вулиця Василя Порика, 28б, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'school',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2310605, lng: 28.3956916 },
-      text:
-        'Дитячий садочок «ДивоСвіт» - вулиця Стельмаха, 43Б, Вінниця, Вінницька область, Украина, 21000',
-    },
-
-    {
-      type: 'school',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2251329, lng: 28.4066378 },
-      text: 'Школа #25 - вулиця Келецька, 89, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'school',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2285897, lng: 28.3999452 },
-      text:
-        'Дитячий садочок #72 - вулиця Миколи Ващука, 19, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'school',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2249041, lng: 28.4019813 },
-      text:
-        'Дитячий садочок #74 - вулиця Андрія Первозванного, 68, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'school',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2287781, lng: 28.404579 },
-      text:
-        'Дитячий садочок #59 - вулиця Воїнів-Інтернаціоналістів, 16, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'school',
-      icon: { url: markersAdresses.school, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2237371, lng: 28.4082318 },
-      text: 'Дитячий садочок #61 - проспект Юності, 30, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4362532, lng: 32.0960091 },
+      text: 'Дитячий садочок №90 - вул. Припортова,12',
     },
     {
       type: 'pharmacy',
       icon: { url: markersAdresses.pharmacy, scaledSize: defaultMarkerSize },
-      position: { lat: 49.228309, lng: 28.3986663 },
-      text: 'Аптека «Конекс» - вулиця Келецька, 122а, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4395377, lng: 32.0979717 },
+      text: 'Медичний центр «Лікар здоровʼя» - вул. Козацька, 9/1',
     },
     {
       type: 'pharmacy',
       icon: { url: markersAdresses.pharmacy, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2294067, lng: 28.3992772 },
-      text: 'Аптека «Бажаю Здоровʼя» - вул. Ващука, Миколи, 14, Вінниця, Украина, 21029',
+      position: { lat: 49.4400953, lng: 32.0955655 },
+      text: 'Гала аптека - вул. Г.Дніпра, 6',
     },
     {
       type: 'pharmacy',
       icon: { url: markersAdresses.pharmacy, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2326766, lng: 28.4070526 },
-      text:
-        'Центр сімейної медицини «MedSun» - Політехнічна, 2-Р, Вінниця, Вінницька область, Украина, 21021',
-    },
-    {
-      type: 'pharmacy',
-      icon: { url: markersAdresses.pharmacy, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2303219, lng: 28.3976451 },
-      text:
-        'Медичний центр «Med Ok» - вулиця Миколи Ващука, 20 Б, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'pharmacy',
-      icon: { url: markersAdresses.pharmacy, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2270311, lng: 28.4060666 },
-      text:
-        'Реабілітаційний центр «AXIS» - вулиця Келецька, 102, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'pharmacy',
-      icon: { url: markersAdresses.pharmacy, scaledSize: defaultMarkerSize },
-      position: { lat: 49.227266, lng: 28.4104279 },
-      text:
-        'Медичний центр «Моє Здоровʼя»- проспект Юності, 16 б, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'pharmacy',
-      icon: { url: markersAdresses.pharmacy, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2353587, lng: 28.4142731 },
-      text:
-        'Вінницька городська больница #1 - Хмельницьке шосе, 92, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4360701, lng: 32.1004398 },
+      text: 'Аптека Копійка - вул. Козацька, 1/1',
     },
 
     {
       type: 'mall',
       icon: { url: markersAdresses.mall, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2275383, lng: 28.3960388 },
+      position: { lat: 49.434546, lng: 32.0910256 },
       text: 'ТЦ "Dnipro Plaza" - Припортова, 34',
     },
-    {
-      type: 'mall',
-      icon: { url: markersAdresses.mall, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2283057, lng: 28.3987288 },
-      text: 'Ринок «Вишенька» - вулиця Келецька, 122А, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'mall',
-      icon: { url: markersAdresses.mall, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2380241, lng: 28.4053917 },
-      text: 'ТОЦ The Mall - Хмельницьке шосе, 114 В, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'mall',
-      icon: { url: markersAdresses.mall, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2377707, lng: 28.3968372 },
-      text: 'Епіцентр - Хмельницьке шосе, 1-А, Зарванці, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'mall',
-      icon: { url: markersAdresses.mall, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2365947, lng: 28.3986128 },
-      text: 'Metro - Хмельницьке шосе, 1 0, 5 KM, Вінниця, Вінницька область, Украина, 23223',
-    },
-    {
-      type: 'mall',
-      icon: { url: markersAdresses.mall, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2271173, lng: 28.4106755 },
-      text: 'ТРЦ S)Mall - проспект Юності, 18, Вінниця, Вінницька область, Украина, 21021',
-    },
-    {
-      type: 'mall',
-      icon: { url: markersAdresses.mall, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2260513, lng: 28.4125869 },
-      text: 'ТРЦ Магігранд - вулиця Келецька, 78 В, Вінниця, Вінницька область, Украина, 21000',
-    },
 
     {
       type: 'restaurant',
       icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2330792, lng: 28.3934522 },
-      text: 'Ресторан Oasis - вулиця Рибацька, Зарванці, Вінницька область, Украина, 23223',
+      position: { lat: 49.4399502, lng: 32.0947041 },
+      text: 'Крихітка «Шу» - вул. Г.Дніпра,6',
     },
     {
       type: 'restaurant',
       icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2377025, lng: 28.4043489 },
-      text:
-        'McDonalds біля ТОЦ The Mall - Хмельницьке шосе, 114, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4400052, lng: 32.0965315 },
+      text: 'GreenWood pizzeria - вул. Г.Дніпра,4',
     },
     {
       type: 'restaurant',
       icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2274345, lng: 28.3952053 },
-      text: 'Ресторан Червоний Цепелін (в Плаза Парк) ',
+      position: { lat: 49.4372542, lng: 32.096053 },
+      text: 'Кавʼярня - вул.Козацька, 7',
     },
     {
       type: 'restaurant',
       icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2268139, lng: 28.407486 },
-      text:
-        'Ресторан «Теревені» - вулиця Келецька, 100, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4382394, lng: 32.1005053 },
+      text: 'Ресторан Faro del Porto  - вул. Козацька, 2',
     },
     {
       type: 'restaurant',
       icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2209018, lng: 28.411136 },
-      text:
-        'Ресторан «Cherry Lake» - проспект Юності, 77, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4359314, lng: 32.1001442 },
+      text: 'Street Pizza - вул. Козацька, 1',
     },
     {
       type: 'restaurant',
       icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2260108, lng: 28.4126193 },
-      text:
-        'McDonalds біля ТРЦ Магігранд - проспект Юності, 43-А, Вінниця, Вінницька область, Украина, 21030',
+      position: { lat: 49.4355718, lng: 32.1000468 },
+      text: 'БоХліб - вул. Козацька, 1/1',
     },
     {
-      type: 'park',
-      icon: { url: markersAdresses.park, scaledSize: defaultMarkerSize },
-      position: { lat: 41.737285, lng: 44.7132783 },
-      text: 'Sapori Veri - Ірпінь, вул. Університетська, 20',
+      type: 'restaurant',
+      icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4354433, lng: 32.1018814 },
+      text: 'Salvadore - вул. Припортова, 1',
     },
     {
-      type: 'sport',
-      icon: { url: markersAdresses.sport, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2314161, lng: 28.4046034 },
-      text: 'Басейн «Маяк» - вулиця Василя Порика, 28, Вінниця, Вінницька область, Украина, 21000',
+      type: 'restaurant',
+      icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4350266, lng: 32.0915966 },
+      text: 'Bulochna - вул. Припортова, 34/2',
     },
     {
-      type: 'sport',
-      icon: { url: markersAdresses.sport, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2274522, lng: 28.3959631 },
-      text:
-        'Тренажерний зал Fitness House - вулиця Келецька, 121, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'sport',
-      icon: { url: markersAdresses.sport, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2304731, lng: 28.3969808 },
-      text:
-        'Тренажерний зал Top Gym - вулиця Миколи Ващука, 20, Вінниця, Вінницька область, Украина, 21000',
+      type: 'restaurant',
+      icon: { url: markersAdresses.restaurant, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4400216, lng: 32.0982144 },
+      text: 'Donuts Club - вул. Г. Дніпра, 1',
     },
     {
       type: 'sport',
       icon: { url: markersAdresses.sport, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2261373, lng: 28.4124733 },
-      text:
-        'Тренажерний зал GBS Level - вулиця Келецька, 78В, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4377156, lng: 32.1004582 },
+      text: 'Sport life - вул. Козацька, 2',
     },
     {
       type: 'sport',
       icon: { url: markersAdresses.sport, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2310438447, lng: 28.3984194647 },
-      text: 'Стадіон - вулиця Миколи Ващука, 10, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4343321, lng: 32.0907261 },
+      text: 'Студія танцю «Крок вперед» - вул. Припортова, 34 (у ТЦ Dnipro Plaza)',
     },
     {
       type: 'supermarket',
       icon: { url: markersAdresses.supermarket, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2270689, lng: 28.3960066 },
-      text: 'Супермаркет Сільпо - вулиця Келецька, 121, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4379775, lng: 32.0913558 },
+      text: 'Molli - вул. Г.Дніпра, 19',
     },
     {
       type: 'supermarket',
       icon: { url: markersAdresses.supermarket, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2377347, lng: 28.4056058 },
-      text: 'Супермаркет АТБ - Хмельницьке шосе, 114в, Вінниця, Вінницька область, Украина, 21000',
+      position: { lat: 49.4364645, lng: 32.1001751 },
+      text: 'Делікат - вул. Козацька, 1/2',
+    },
+    {
+      type: 'supermarket',
+      icon: { url: markersAdresses.supermarket, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4344685, lng: 32.0912126 },
+      text: 'Велмарт - вул. Припортова, 34 (у ТЦ Dnipro Plaza)',
+    },
+    {
+      type: 'supermarket',
+      icon: { url: markersAdresses.supermarket, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4371023, lng: 32.0914351 },
+      text: 'OkWine - вул.Г. Дніпра, 23',
+    },
+    {
+      type: 'supermarket',
+      icon: { url: markersAdresses.supermarket, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4367528, lng: 32.091401 },
+      text: 'Шарлотка - вул.Г. Дніпра, 25/1',
+    },
+    {
+      type: 'supermarket',
+      icon: { url: markersAdresses.supermarket, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4401011, lng: 32.0973247 },
+      text: 'Центр видачі замовлень Епіцентр - вул. Г.Дніпра, 4/3',
     },
     {
       type: 'drivingSchool',
@@ -368,55 +278,54 @@ function initMap() {
       text:
         'Автошкола на Вишеньці - вулиця Келецька, 130а, Вінниця, Вінницька область, Украина, 21000',
     },
+
     {
-      type: 'sport',
-      icon: { url: markersAdresses.sport, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2274522, lng: 44.7146424 },
-      text: 'Стадіон - вулиця Миколи Ващука, 10, Вінниця, Вінницька область, Украина, 21000',
-    },
-    {
-      type: 'aquapark',
-      icon: { url: markersAdresses.aquapark, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2315055, lng: 28.4046839 },
-      text:
-        'Аквапарк «Маяк» - вулиця Василя Порика, 28, Вінниця, Вінницька область, Украина, 21000',
+      type: 'post',
+      icon: { url: markersAdresses.post, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4345763, lng: 32.1018748 },
+      text: 'Нова пошта №2 - вул.Ю.Іллєнка, 1',
     },
     {
       type: 'post',
       icon: { url: markersAdresses.post, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2319754, lng: 28.4019622 },
-      text: 'НоваПошта #23 - Порика, Василя, 46, Вінниця, Вінницька область, Украина, 21021',
+      position: { lat: 49.4399239, lng: 32.0965302 },
+      text: 'Поштомат № 26231 - вул. Г. Дніпра, 4',
     },
     {
-      type: 'busStop',
-      icon: { url: markersAdresses.busStop, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2370253, lng: 28.4041529 },
-      text:
-        'Західний Автовокзал - Хмельницьке шосе, 107, Вінниця, Вінницька область, Украина, 21000',
+      type: 'tire',
+      icon: { url: markersAdresses.tire, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4394479, lng: 32.0943828 },
+      text: 'Твоя шина - вул. Г.Дніпра, 7',
     },
     {
-      type: 'petrolStation',
-      icon: { url: markersAdresses.petrolStation, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2314095, lng: 28.4056734 },
-      text: 'АЗС «WOG» - вулиця Василя Порика, 28, Вінниця, Вінницька область, Украина, 21034',
+      type: 'quay',
+      icon: { url: markersAdresses.quay, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4398741, lng: 32.0988967 },
+      text: 'Набережна: Козацька, 9',
     },
     {
-      type: 'petrolStation',
-      icon: { url: markersAdresses.petrolStation, scaledSize: defaultMarkerSize },
-      position: { lat: 49.2384907, lng: 28.4002884 },
-      text: 'АЗС OKKO - Хмельницьке ш., 107-В, Вінниця, Вінницька область, Украина, 21000',
+      type: 'fun',
+      icon: { url: markersAdresses.fun, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4341287, lng: 32.0912722 },
+      text: 'Космос Боулінг - вул. Припортова, 34Б(у ТЦ Dnipro Plaza)',
     },
     {
-      type: 'carWashing',
-      icon: { url: markersAdresses.carWashing, scaledSize: defaultMarkerSize },
-      position: { lat: 49.230228, lng: 28.3908037 },
-      text: 'Автомийка Бастіон - вулиця Келецька, 125, Вінниця, Вінницька область, Украина, 21000',
+      type: 'fun',
+      icon: { url: markersAdresses.fun, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4347951, lng: 32.0914171 },
+      text: 'Кінотеатр Мультиплекс - вул. Припортова, 34 (у ТЦ Dnipro Plaza)',
     },
     {
-      type: 'carWashing',
-      icon: { url: markersAdresses.carWashing, scaledSize: defaultMarkerSize },
-      position: { lat: 49.23336724213077, lng: 28.394595164707443 },
-      text: 'Автомийка Clean Up - 1 км Барського шосе, Вінниця, Вінницька область, Украина, 21010',
+      type: 'fun',
+      icon: { url: markersAdresses.fun, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4345705, lng: 32.0911216 },
+      text: 'Атракціони віртуальної реальності - вул. Припортова, 34 (у ТЦ Dnipro Plaza)',
+    },
+    {
+      type: 'fun',
+      icon: { url: markersAdresses.fun, scaledSize: defaultMarkerSize },
+      position: { lat: 49.4345525, lng: 32.0907657 },
+      text: 'Розважальний центр Fly Kids - вул. Припортова, 34 (у ТЦ Dnipro Plaza)',
     },
   ];
   /* beautify preserve:end */

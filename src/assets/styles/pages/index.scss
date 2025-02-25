@@ -1429,7 +1429,7 @@ section {
     .map {
       height: 100%;
       width: 100%;
-      color: $bg-color;
+      color: $bc;
     }
   }
 
@@ -1469,11 +1469,12 @@ section {
       .closed-fltr {
         display: flex;
         gap: 12px;
+        white-space: nowrap;
       }
     }
 
     &.oppened {
-      background-color: rgba(205, 200, 188, 0.80);
+      background-color: rgba(229, 222, 182, 0.80);
       width: calc(100% - 60px);
 
       @include tablet {
