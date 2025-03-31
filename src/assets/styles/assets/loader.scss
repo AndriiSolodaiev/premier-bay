@@ -48,7 +48,7 @@
   transition: transform 0.6s ease-in-out;
 
   p {
-    color: $accent-color;
+    color: $bc;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -80,7 +80,8 @@
   align-items: flex-end;
 
   p {
-    color: $accent-color;
+    text-transform: uppercase;
+    color: $bc;
     animation: load-pulse 1.5s ease infinite;
   }
 }
@@ -120,14 +121,16 @@
   .colored-track {
     height: 2px;
     width: 100%;
-    background: linear-gradient(90deg, #E7FD6B 0%, #06C971 100%);
+    // background: rgba(205, 200, 188, 1) ;
+    background:   rgba(205, 200, 188, 1);
   }
 
   .colored-gradient {
-    height: 47px;
+    height: 67px;
     width: 100%;
     // opacity: 0.5;
-    background: linear-gradient(90deg, #e7fd6b86 0%, #06c9717e 100%);
+    background: rgba(205, 200, 188, 1) ;
+    // background: linear-gradient(90deg, #e7fd6b86 0%, #06c9717e 100%);
     position: relative;
 
     &::before {
@@ -138,7 +141,7 @@
       z-index: 1;
       height: 100%;
       width: 100%;
-      background: linear-gradient(-2deg, #06c97100 0%, $bg-color-2 27.68%, $bg-color-2 50.17%);
+      background: linear-gradient(-1deg, #06c97100 0%, $bg-color-2 27.68%, $bg-color-2 50.17%);
     }
 
     @include tablet {

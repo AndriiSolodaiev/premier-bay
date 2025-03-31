@@ -11,7 +11,7 @@ export default function googleMap() {
 // Google map start
 async function func() {
   const script = document.createElement('script');
-  let key = 'AIzaSyCaYQ83EA9peTsEI6ih6cUc6uaCjn080qE';
+  let key = 'AIzaSyCoHHkCQiBAZYtPKEsG23r0DINku8X58cc';
   // if (window.location.href.match(/localhost/)) key = '';
   script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&callback=initMap&language=ua`;
   document.getElementsByTagName('head')[0].appendChild(script);
@@ -47,8 +47,8 @@ function initMap() {
   //   lat: 49.2281012,
   //   lng: 28.3925433,
   // };
-  const lat = window.innerWidth < 768 ? 49.4381135 : 49.437254;
-  const lng = window.innerWidth < 768 ? 32.0933513 : 32.096053;
+  const lat = window.innerWidth < 768 ? 49.4381135 : 49.4389;
+  const lng = window.innerWidth < 768 ? 32.0933513 : 32.0949;
   const center = {
     lat,
     lng,

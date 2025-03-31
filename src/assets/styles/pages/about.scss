@@ -423,11 +423,11 @@
       width: 100%;
       @include general-text;
       color: $bc;
-      padding: 40px 20px 80px;
+      padding: 60px 20px 80px;
       background: linear-gradient(180deg, rgba(205, 200, 188, 0.00) 0%, rgba(205, 200, 188, 0.80) 35%, #CDC8BC 100%);
 
       @include tablet {
-        padding: 40px 40px 100px;
+        padding: 60px 40px 100px;
       }
     }
   }

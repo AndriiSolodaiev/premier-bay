@@ -5,7 +5,7 @@
     padding-bottom: 60px;
     height: 100%;
     width: 100%;
-    background-image: url('../images/menu-bg.jpg');
+    background: url('../images/404-bg.png'), $bg-color;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -15,7 +15,7 @@
     // }
 
     @include laptop {
-        background-image: url('../images/menu-bg-pc.jpg');
+       
         padding-top: 0px;
     }
 
