@@ -56,17 +56,15 @@
   }
 
   .general-btn {
-    background-color: $wc;
-    color: $bc;
+    background: $wc;
+    color: $bg-color;
     box-shadow: none;
     transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-    border: none;
 
     &.active {
-      background-color: $accent-color;
+      background-color: $bg-color;
       color: $wc;
     }
-
   }
 
   .iframe__close-btn {

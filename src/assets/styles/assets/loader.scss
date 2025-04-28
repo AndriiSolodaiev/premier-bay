@@ -36,7 +36,7 @@
 .loader-upper-part {
   position: absolute;
   z-index: -1;
-  background-color: $bg-color-2;
+  background-color: $bg-color;
   top: 0;
   left: 0;
   width: 100%;
@@ -48,7 +48,7 @@
   transition: transform 0.6s ease-in-out;
 
   p {
-    color: $bc;
+    color: rgba(205, 200, 188, 0.50);
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -80,8 +80,7 @@
   align-items: flex-end;
 
   p {
-    text-transform: uppercase;
-    color: $bc;
+    color: rgba(205, 200, 188);
     animation: load-pulse 1.5s ease infinite;
   }
 }
@@ -109,10 +108,10 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: $bg-color-2;
+    background: linear-gradient(180deg, $bg-color 47px, #322A32 49px, $bg-color);
 
     @include tablet {
-      background: $bg-color-2;
+      background: linear-gradient(180deg, $bg-color 98px, #322A32 100px, $bg-color);
     }
 
     // transform: translateX(74%);
@@ -121,16 +120,14 @@
   .colored-track {
     height: 2px;
     width: 100%;
-    // background: rgba(205, 200, 188, 1) ;
-    background:   rgba(205, 200, 188, 1);
+    background: linear-gradient(90deg, #E7FD6B 0%, #06C971 100%);
   }
 
   .colored-gradient {
-    height: 67px;
+    height: 47px;
     width: 100%;
     // opacity: 0.5;
-    background: rgba(205, 200, 188, 1) ;
-    // background: linear-gradient(90deg, #e7fd6b86 0%, #06c9717e 100%);
+    background: linear-gradient(90deg, #e7fd6b86 0%, #06c9717e 100%);
     position: relative;
 
     &::before {
@@ -141,7 +138,7 @@
       z-index: 1;
       height: 100%;
       width: 100%;
-      background: linear-gradient(-1deg, #06c97100 0%, $bg-color-2 27.68%, $bg-color-2 50.17%);
+      background: linear-gradient(-2deg, #06c97100 0%, rgba(34, 26, 34, 0.60) 27.68%, #221A22 50.17%);
     }
 
     @include tablet {
@@ -155,11 +152,11 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
-    color: $bc;
+    color: $wc;
     font-family: $default-font2;
     font-size: 96px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     line-height: 100%;
     letter-spacing: -7.68px;
 

@@ -8,21 +8,14 @@
 }
 
 .header-bg {
-  background: linear-gradient(180deg, #FFFFF6 0%, #fffff6b4 70%, rgba(255, 255, 246, 0.00) 100%);
+  background: linear-gradient(180deg, rgba(15, 15, 15, 0.80) 0%, rgba(15, 15, 15, 0.60) 51.5%, rgba(15, 15, 15, 0.00) 100%);
   padding: 4px 12px;
   display: flex;
   align-items: center;
-  pointer-events: none;
-  // backdrop-filter: blur(12px);
-  // -webkit-backdrop-filter: blur(12px);
-
-  &>* {
-    pointer-events: all;
-  }
 
   // justify-content: space-between;
   @include tablet {
-    padding: 31px 40px;
+    padding: 11px 40px;
   }
 
   .logo-wrap {
@@ -65,7 +58,7 @@
 .call-us-btn {
   @include tiny-text;
   display: block;
-  color: $bc;
+  color: $wc;
   line-height: 140%;
 }
 
@@ -73,15 +66,14 @@
   color: $wc;
   @include tiny-text;
   border-radius: 100px;
-  border: 1px solid #A34F12;
+  border: 1px solid #29B374;
   background: transparent;
-  box-shadow: 0px 2px 2px 0px #F0924F inset, 0px -2px 2px 0px #F0924F inset;
+  box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
   padding: 14px 18px;
   transition: all 0.4s ease-in-out;
   display: block;
   width: fit-content;
   position: relative;
-  white-space: nowrap;
 
   span,
   svg {
@@ -95,8 +87,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    background: linear-gradient(180deg, #BB6629 0%, #BB6629 100%);
-    box-shadow: 0px 2px 2px 0px #F0924F inset, 0px -2px 2px 0px #F0924F inset;
+    background: linear-gradient(180deg, #228458 0%, #006739 100%);
     width: 100%;
     height: 100%;
     border-radius: 100px;
@@ -108,8 +99,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    background: $accent-color-hover;
-    box-shadow: 0px 2px 2px 0px #F0924F inset, 0px -2px 2px 0px #F0924F inset;
+    background: linear-gradient(180deg, #0CC371 0%, #006739 100%);
     width: 100%;
     height: 100%;
     border-radius: 100px;
@@ -125,7 +115,7 @@
   &:active {
 
     // background: linear-gradient(180deg, #0CC371 0%, #006739 100%);
-    // box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
+    box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
 
     &:after {
       opacity: 1;
@@ -138,7 +128,7 @@
   .accent-btn {
     &:hover {
       // background: linear-gradient(180deg, #0CC371 0%, #006739 100%);
-      // box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
+      box-shadow: 0px 2px 2px 0px #36D18B inset, 0px -2px 2px 0px #30AA71 inset;
 
       &:after {
         opacity: 1;
@@ -181,7 +171,7 @@
     @include tablet {
       transition: color 0.4s ease-in-out;
       display: block;
-      color: $bc;
+      color: $wc;
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
@@ -199,7 +189,7 @@
 
     span {
       width: 32px;
-      background-color: $bc;
+      background-color: $wc;
       height: 1px;
 
 
@@ -295,14 +285,13 @@
   }
 
   .general-btn {
-    background-color: $wc;
-    color: $bc;
+    background: $wc;
+    color: $bg-color;
     box-shadow: none;
     transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-    border: none;
 
     &.active {
-      background-color: $accent-color;
+      background-color: $bg-color;
       color: $wc;
     }
   }
@@ -364,7 +353,7 @@
   z-index: 99;
   width: 100%;
   height: 100%;
-  background-image: url('../images/Menu/BG.jpg');
+  background-image: url('../images/menu-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 100px 20px 20px;
@@ -382,7 +371,7 @@
 
   @include laptop {
 
-    background-image: url('../images/Menu/BG.jpg');
+    background-image: url('../images/menu-bg-pc.jpg');
     display: flex;
     padding: 15vh 40px 40px 40px;
     gap: 40px;
@@ -421,8 +410,8 @@
   overflow: hidden;
   position: relative;
   padding: 11px 0px;
-  // border-top: 1px solid #403939;
-  // border-bottom: 1px solid #403939;
+  border-top: 1px solid #403939;
+  border-bottom: 1px solid #403939;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -434,7 +423,7 @@
     border-bottom: none;
 
     @include laptop {
-      // border-bottom: 1px solid #403939;
+      border-bottom: 1px solid #403939;
 
     }
   }
@@ -455,7 +444,7 @@
       z-index: 2;
       width: 100%;
       height: 1px;
-      background-color: $accent-color;
+      background-color: #766B6B;
       transform: translateX(-100%);
       transition: transform 0.5s ease-in-out;
     }
@@ -468,7 +457,7 @@
       z-index: 2;
       width: 100%;
       height: 1px;
-      background-color: $accent-color;
+      background-color: #766B6B;
       transform: translateX(100%);
       transition: transform 0.5s ease-in-out;
     }
@@ -477,8 +466,7 @@
 
 .desktop {
   .menu-item:hover {
-
-    color: $accent-color;
+    color: $wc;
 
     &::after,
     &::before {
@@ -527,20 +515,18 @@
 .menu-block {
   overflow: hidden;
   border-radius: 8px;
-  // border: 1px solid #403939;
+  border: 1px solid #403939;
   padding: 20px;
   padding-bottom: 26px;
   width: 100%;
   position: relative;
   margin-bottom: 8px;
   display: block;
-  // height: 132px;
 
   @include tablet {
     padding: 30px;
     padding-bottom: 38px;
     margin-bottom: 13px;
-    // height: 183px;
   }
 
   @include laptop {
@@ -549,8 +535,7 @@
     padding: 0;
     padding-top: 40px;
     margin-bottom: 0px;
-    width: calc((100% - 2vw) / 2);
-    height: auto;
+    width: calc((100% - 2vw) / 2)
   }
 
   &:last-child {
@@ -610,12 +595,12 @@
     right: 0;
     height: 110%;
     width: auto;
-
+    max-width: 30%;
 
     img {
       height: 100%;
       width: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
 
     @include tablet {
@@ -634,7 +619,6 @@
 
       img {
         object-position: left;
-        object-fit: cover;
       }
     }
   }
@@ -655,7 +639,7 @@
     }
 
     @include tablet {
-      // left: 53px;
+      left: 53px;
       max-width: 40%;
 
     }
@@ -675,24 +659,21 @@
   }
 
   .deap-mask {
+    display: none;
 
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/Menu/Sky.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-
-    &.girl {
-      background-image: url("../images/Menu/Sky-girl.jpg");
+    @include laptop {
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 50% 100%, #9a539a, #ffffff00 70%);
+      opacity: 0.7;
+      transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 
     }
-
   }
 
   .top-mask {
@@ -722,12 +703,12 @@
       opacity: 1;
     }
 
-    // .menu-block__text p {
-    //   color: $wc;
-    // }
+    .menu-block__text p {
+      color: $wc;
+    }
 
     .deap-mask {
-      // transform: scale(1.2);
+      transform: scale(1.2);
     }
   }
 }
@@ -735,8 +716,9 @@
 .menu-contact-block {
 
   border-radius: 8px;
-  border: 1px solid #CDC8BC;
+  border: 1px solid #403939;
   padding: 20px;
+
   width: 100%;
   display: flex;
   justify-content: center;
@@ -779,7 +761,6 @@
 
       path {
         transition: fill 0.4s ease-in-out;
-        fill: $bc;
       }
 
       @include laptop {
@@ -797,7 +778,7 @@
         transform: scale(1.2);
 
         path {
-          fill: $accent-color;
+          fill: $text-color-2
         }
       }
     }
@@ -830,7 +811,7 @@
 
   .link__graphic--slide {
     bottom: -10px;
-    stroke-width: 2px;
+    stroke-width: 3px;
     transition: transform 0.7s;
     transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
   }

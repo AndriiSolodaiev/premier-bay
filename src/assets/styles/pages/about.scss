@@ -1,17 +1,17 @@
 .page-hero {
   padding-top: 106px;
-  background: $bg-color;
+  background: radial-gradient(circle at 50% 50%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 70%), $accent-color;
   overflow: hidden;
 
   .about__title-wrap>.line {
-    background: rgba(205, 200, 188, 1);
+    background: rgba(246, 246, 246, 0.2);
   }
 
 }
 
 .about-page {
   @include laptop {
-    background: $bg-color;
+    background: $accent-color;
 
     .line-with-circle {
       display: none;
@@ -48,7 +48,7 @@
 
   .decor-circle {
 
-    border: 1px solid rgba(205, 200, 188, 1);
+    border: 1px solid rgba(246, 246, 246, 0.20);
     border-radius: 50%;
     display: flex;
     width: 60px;
@@ -61,7 +61,6 @@
     svg {
       width: 8px;
       height: 5px;
-      fill: rgba(0, 0, 0, 1)
     }
 
   }
@@ -89,11 +88,11 @@
 
     .page-hero-descr {
       position: absolute;
-      top: 50px;
+      top: 2vw;
       right: 11vw;
       z-index: 2;
       width: 40vw;
-      color: $bc;
+      color: $bg-color;
       text-align: start;
     }
 
@@ -105,8 +104,8 @@
       right: 0;
       z-index: 1;
       width: 100%;
-      height: 50%;
-      background: linear-gradient(0deg, rgba(255, 255, 246, 0.00) 0%, #FFFFF6 100%);
+      height: 15%;
+      background: linear-gradient(0deg, rgba(50, 42, 50, 0.00) 0%, #322A32 100%);
     }
   }
 }
@@ -130,10 +129,9 @@
   }
 
   .about__text-wrap {
-    background-color: $wc;
+    background-color: $bg-color;
     padding: 32px 20px 48px 20px;
     position: relative;
-    border: 1px solid $border-color;
 
     @include tablet {
       width: 60vw;
@@ -145,7 +143,7 @@
     padding-top: 15px;
     padding-left: 20px;
     @include general-text;
-    border-left: 1px solid $border-color;
+    border-left: 1px solid rgba(246, 246, 246, 0.20);
 
     .icon--points {
       width: 8px;
@@ -168,12 +166,12 @@
 }
 
 .about-arcitecture {
-  background-color: $bg-color;
+  background-color: $accent-color;
   padding-top: 80px;
   overflow: hidden;
 
   @include laptop {
-    background: $bg-color;
+    background: radial-gradient(circle at 50% -10%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 20%), $accent-color;
 
     .about__text-block {
       padding-left: calc(50% + 20px);
@@ -248,7 +246,7 @@
     left: 0;
     width: 100%;
     height: 70%;
-    background: linear-gradient(0deg, rgba(255, 255, 246, 0.00) 0%, rgba(255, 255, 246, 0.75) 59.5%, #FFFFF6 100%);
+    background: linear-gradient(0deg, rgba(50, 42, 50, 0.00) 0%, rgba(50, 42, 50, 0.75) 49.5%, #322A32 100%);
   }
 
   .about-arcitecture__descr {
@@ -305,11 +303,11 @@
 }
 
 .about-location {
-  background: $bg-color;
+  background: radial-gradient(circle at 44% 50%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 70%), $accent-color;
 
   @include laptop {
     padding-bottom: 210px;
-    background: $bg-color;
+    background: radial-gradient(circle at 50% 50%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 50%), $accent-color;
 
     .about__title-wrap {
       .line {
@@ -393,7 +391,7 @@
   .swiper-slide {
     border-radius: 20px;
     overflow: hidden;
-    height: 120vw;
+    height: 137vw;
 
     @include tablet {
       height: auto;
@@ -422,12 +420,12 @@
       left: 0;
       width: 100%;
       @include general-text;
-      color: $bc;
-      padding: 60px 20px 80px;
-      background: linear-gradient(180deg, rgba(205, 200, 188, 0.00) 0%, rgba(205, 200, 188, 0.80) 35%, #CDC8BC 100%);
+      color: $wc;
+      padding: 40px 20px 80px;
+      background: linear-gradient(180deg, rgba(50, 42, 50, 0.00) 0%, rgba(50, 42, 50, 0.80) 35%, #322A32 100%);
 
       @include tablet {
-        padding: 60px 40px 100px;
+        padding: 40px 40px 120px;
       }
     }
   }
@@ -458,10 +456,6 @@
     width: calc(100% - 80px);
   }
 
-  @include laptop {
-    padding: 40px 0;
-  }
-
   .arrows-wrap {
     display: flex;
     gap: 4px;
@@ -476,10 +470,10 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    background-color: $wc;
+    background-color: $text-color-2;
 
     svg path {
-      stroke: $bc;
+      stroke: $bg-color;
     }
   }
 }
@@ -491,15 +485,13 @@
     background-color: $bg-color;
     box-shadow: none;
 
-    svg path {}
+    svg path {
+      stroke: $wc;
+    }
   }
 }
 
 .about-advantages.advantages {
-  @include tablet {
-    padding-top: 150px;
-  }
-
   @include laptop {
     padding-top: 0;
 
@@ -512,26 +504,22 @@
 .about-safety {
   padding-top: 80px;
   overflow: hidden;
-  background: $bg-color;
+  background: radial-gradient(circle at 44% 40%, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 60%), $accent-color;
   padding-bottom: 20px;
-
-
 
   &__camera-wrap {
     border-radius: 20px;
     overflow: hidden;
     aspect-ratio: 1.5/1;
     margin-bottom: 40px;
+    img {
 
-  }
-
-  img {
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  
+  
+    }
   }
 
   @include tablet {
@@ -554,45 +542,37 @@
         transform: translateX(100%);
       }
     }
-
     &__camera-wrap {
       aspect-ratio: 2.6/1;
       width: 65%;
 
 
     }
-
     &__descr-wrap {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 80px;
-      padding-left: 40px;
-      padding-right: 40px;
 
       p {
         @include subtitle-text;
         width: 35%;
+        
         margin: 0;
         margin-left: 20px;
-        color: $bc
       }
-
-
 
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-
-
       }
     }
   }
 
 
 
-  // &__camera-wrap {
+  // &__camera {
   //   padding-left: 37px;
   //   padding-right: 37px;
   //   margin-bottom: 40px;
@@ -602,7 +582,7 @@
     padding-left: 20px;
     padding-right: 20px;
     @include general-text;
-    color: $bc;
+    color: $text-color;
     margin-bottom: 60px;
 
     @include laptop {
@@ -629,16 +609,7 @@
   &__card {
     border-radius: 20px;
     overflow: hidden;
-    background-color: $bg-color-2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    &:last-child {
-      img {
-        object-position: top left;
-      }
-    }
+    background-color: $bg-color;
 
     @include laptop {
       width: calc((100% - 40px) / 3);
@@ -649,9 +620,6 @@
 
   &__card-img-wrap {
     position: relative;
-    flex: 1;
-
-
 
     .mask {
       position: absolute;
@@ -660,7 +628,7 @@
       left: 0;
       width: 100%;
       height: 37.5%;
-      // background: linear-gradient(180deg, rgba(34, 26, 34, 0.00) 0%, rgba(34, 26, 34, 0.75) 49.5%, #221A22 100%);
+      background: linear-gradient(180deg, rgba(34, 26, 34, 0.00) 0%, rgba(34, 26, 34, 0.75) 49.5%, #221A22 100%);
     }
   }
 
@@ -669,7 +637,7 @@
 
     p {
       padding-left: 20px;
-      border-left: 1px solid $wc;
+      border-left: 1px solid rgba(205, 200, 188, 0.2);
       @include general-text;
     }
   }
@@ -689,13 +657,6 @@
     }
 
     .about__text-wrap {
-      background-color: transparent;
-      border: none;
-
-      p {
-        border-color: $wc;
-      }
-
       @include tablet {
         width: 100%;
       }
@@ -716,7 +677,7 @@
         top: 32px;
         width: calc(100% - 40px);
         height: 70%;
-        background-color: $wc;
+        background-color: $text-color-2;
         border-radius: 50%;
       }
     }

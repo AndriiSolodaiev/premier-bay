@@ -1,6 +1,6 @@
 .progress {
   padding-bottom: 100px;
-  background: $bg-color;
+  background: radial-gradient(circle at 44% 700px, rgba(172, 126, 102, 0.69) 1%, rgba(238, 130, 238, 0) 70%), $accent-color;
 
   &-title {
     @include laptop {
@@ -23,14 +23,12 @@
 .progress-btn {
   background-color: transparent;
   box-shadow: none;
-  border-color: $border-color;
-  color: $bc;
+  border-color: rgba(246, 246, 246, 0.20);
 
   &.active {
     pointer-events: none;
-    background: $accent-color;
-    color: $wc;
-    // box-shadow: 0px 1px 0px 0px #5A4C5A inset, 0px 12px 60px 0px #140E14, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
+    background: var(--Violet-dark, #221A22);
+    box-shadow: 0px 1px 0px 0px #5A4C5A inset, 0px 12px 60px 0px #140E14, 0px 9px 30px 0px rgba(116, 69, 116, 0.25) inset, 0px 0px 8px 0px rgba(86, 39, 86, 0.15) inset;
   }
 }
 
@@ -50,7 +48,6 @@
   width: 100%;
   background-color: $wc;
   border-radius: 20px;
-  border: 1px solid $border-color;
   padding: 20px;
   height: fit-content;
   transition: box-shadow 0.4s ease-in-out;
@@ -97,7 +94,7 @@
     border-radius: 100px;
     width: fit-content;
     font-size: 16px;
-    color: $bc;
+    color: $accent-color;
   }
 
   &__date-wrap {
@@ -123,14 +120,14 @@
 
   &__year {
     @include general-text;
-    color: $bc;
+    color: $accent-color;
     text-align: end;
 
   }
 
   &__month {
     @include subtitle-text;
-    color: $bc;
+    color: $accent-color;
     text-align: end;
   }
 }

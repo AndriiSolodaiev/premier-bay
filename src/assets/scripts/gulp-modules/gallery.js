@@ -94,6 +94,9 @@ for (let i = 0; i < maxItems; i++) {
 $slider.addClass('slideshow-left');
 $('.slideshow-left')
   .slick({
+    swipe: false,          
+    touchMove: false,      
+    draggable: false,
     vertical: true,
     verticalSwiping: true,
     arrows: false,
@@ -151,6 +154,8 @@ $('.slideshow-right .slider').slick({
   speed: 950,
   cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
   initialSlide: maxItems - 1,
+  touchMove: false,      
+    draggable: false,
 });
 
 $('.slick-arrow-up').on('click', function() {
