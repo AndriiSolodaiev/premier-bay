@@ -2166,3 +2166,7 @@ section {
     max-width: 65%;
   }
 }
+
+.page-hero > .about__title-wrap > *,.page-hero > .tours-section > *, .breadcrumbs, .page-hero > .progress-list > *,.page-hero > .single-progress__content,.page-hero > .tours-section > *, .page-hero > .property-hero__img-descr-wrap > *,.page-hero > .line-margin, .page-hero > .progress-filter > *,.page-hero > .panorama-iframe__wrap > *, .page-hero > .news-filter > *, .page-hero > .news-list > *, .page-hero > .gallery > *, .page-hero > .page-hero__wrapper > * {
+  opacity: 0;
+} 

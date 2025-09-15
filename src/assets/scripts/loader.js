@@ -39,7 +39,15 @@ function updateLoader() {
     setTimeout(updateLoader, delay);
   }
 }
-updateLoader();
+if (window.location.pathname === '/' ) {
+  // Тільки головна сторінка
+  updateLoader();
+} else {
+  // Приховуємо лоадер на внутрішніх
+  const loader = document.querySelector('.loader-wrap');
+  
+  if (loader) loader.style.display = 'none';
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   domLoaded = true;

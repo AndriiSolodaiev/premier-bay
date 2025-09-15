@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     );
 
-  window.addEventListener('finishLoader', () => {
+  // window.addEventListener('finishLoader', () => {
     loadTl.play();
-  });
+  // });
 });
 
 const swiperProgress = new Swiper('.swiper-progress', {

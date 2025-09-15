@@ -95,9 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     );
 
-  window.addEventListener('finishLoader', () => {
+  // window.addEventListener('finishLoader', () => {
     loadTl.play();
-  });
+  // });
 });
 
 const aboutTl = gsap.timeline({
