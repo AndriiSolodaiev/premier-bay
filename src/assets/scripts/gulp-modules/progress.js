@@ -133,12 +133,12 @@ filterBtn.forEach(btn => {
         .to('.progress-card', { opacity: 0, yPercent: 20, duration: 0.3 })
         .add(() => {
           progressCards.forEach(card => {
-            if (card.dataset.progressCard !== btnDataset) {
+            if (!card.dataset.progressCard.split(' ').includes(btnDataset)) {
               card.style.display = 'none';
             }
           });
         })
-        .to(`[data-progress-card="${btnDataset}"]`, {
+        .to(`[data-progress-card~="${btnDataset}"]`, {
           display: 'block',
           opacity: 1,
           yPercent: 0,
